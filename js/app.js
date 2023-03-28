@@ -28,8 +28,39 @@ Enemy.prototype.render = function() {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+let enemyOne = new Enemy;
+let enemyTwo = new Enemy;
+let allEnemies = [enemyOne, enemyTwo];
 
+console.log(allEnemies);
+console.log(enemyOne);
+
+// canvas.width = 505;
+// canvas.height = 606;
+
+// Place the player object in a variable called player
+let Player = function(){
+    this.sprite = 'images/char-boy.png';
+    this.x = 505/5*2;
+    this.y = 430;
+};
+let player = new Player;
+Player.prototype.render = function(){
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.update = function(dt){
+
+};
+
+Player.prototype.handleInput = function(key){
+    console.log(key);
+    if(key === 'right'){
+        player.x += 10;
+    }
+
+};
+console.log(player);
 
 
 // This listens for key presses and sends the keys to your
